@@ -58,14 +58,17 @@ function predictWebcam(){
                 
                 p.style = 'background-color: red; color: white;';
                 p.style = 'text-align: center;';
+                p.style = 'font-size: 32px;';
+                p.style = 'font-weight: 100;';
                 p.style = 'padding: 12px;'
 
                 const highlighter = document.createElement('div');
-                highlighter.setAttribute('class', 'highlighter');
-                highlighter.style = 'left: ' + predictions[n].bbox[0] + 'px; top: '
+                highlighter.setAttribute('class', 'highlighter row justify-content-center');
+                highlighter.style = 'left: ' + predictions[n].bbox[1] + 'px; top: '
                 + predictions[n].bbox[1] + 'px; width: ' 
                 + predictions[n].bbox[2] + 'px; height: '
                 + predictions[n].bbox[3] + 'px;';
+                
                 liveView.appendChild(highlighter);
                 liveView.appendChild(p);
                 children.push(highlighter);
